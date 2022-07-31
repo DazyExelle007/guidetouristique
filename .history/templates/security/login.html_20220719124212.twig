@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Connexion' %}
+
+{% block body %}
+<div class="container col-xl-10 col-xxl-12 px-4 py-5">
+    <div class="row align-items-center g-lg-6 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-5">Vontre compte guide vous attends</h1>
+        <p class="col-lg-10 fs-4">
+          Below is an example form built entirely with Bootstrap’s form controls. Each 
+          required form group has a validation state that can be triggered by attempting 
+          to submit the form without completing it.
+        </p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+
+        {% if error %}
+        <div class="p-2 alert alert-error rounded">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <form class="p-2 p-md-4 border rounded-2 bg-light" method="post">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control"  value="{{ last_username }}" name="email"  id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Adress Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Mot de passe</label>
+          </div>
+          <div class="checkbox mb-3">
+
+            <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+            >
+            <div class="d-flex justify-content-between">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="_remember_me" id="remember_me">
+                <label class="form-check-label" for="remember_me">
+                  Gardé ouver votre compte
+                </label>
+              </div>
+              <a href="#">Mot de passe oblier?</a>
+            </div>
+         
+          </div>
+          <input class="w-100 btn btn-lg btn-success btn-sm" type="submit" value="S'identifier" formnovalidate>
+          <hr class="my-4">
+          <small class="text-muted">Pas encore inscrit <a href="{{ path('app_register') }}" class="text-decoration-none">Créer un compte</a></small>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

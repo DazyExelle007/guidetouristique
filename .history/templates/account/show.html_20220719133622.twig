@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html.twig' %}
+
+
+{% block title 'Profil' %}
+
+{% block body%}
+<div class="row">
+    <div class="col-md-6 mx-auto text-center">
+        <h1 class="my-4">Profile</h1>
+        {% if app.user %}
+        <img src="{{app.user.imageGuide ? vich_uploader_asset(app.user) : asset('images/maki.jpg') }}" alt="{{ app.user.fullName }}'s Avatar" width="250" height="250" class=" rounded-circle">
+        {% endif %}
+      <hr>
+        <p class="mt-5 lead">{{ app.user.email }}</p>
+        <h2>{{ app.user.fullName }}</h2>
+        <p><small>Compte créé le {{ app.user.createdAt|date('d/m/y') }}</small></p>
+        <p>
+            <a href="{{ path('app_account_edit') }}">Modifier le compte</a> | <a href="{{ path('app_account_change_password') }}">Changer le mot de passe</a>
+        </p>
+       
+    </div>
+</div>
+{% endblock%}

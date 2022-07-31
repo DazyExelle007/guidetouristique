@@ -1,0 +1,302 @@
+#sticky
+{
+top: 0;
+position: sticky;
+z-index: 2;
+}
+
+#section-image{
+    height: 80vh;
+    background-image: url("/public/images/maki2.jpg");
+    object-fit: contain;
+    background-position: center;
+    background-color:rgb(103, 100, 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #000;
+    background-blend-mode: lighten;
+   
+}
+#section-normal{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section-center{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#section-localisation{
+    height: 80vh;
+}
+
+.container{
+    .title-guide{
+        h1{
+            margin-bottom: 0.8rem;
+            font-size: 40px;
+            font-weight: bolder;
+            color: #000;
+        }
+        p{
+            font-size: 25px;
+        }
+     
+       
+    }
+}
+.guide-slik{
+    position: relative;
+    margin-top: 4rem;
+    .prevGuide {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 1;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border:none;
+    }
+    .nextGuide {
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        z-index: 1;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border:none;
+        text-align: center;
+    }
+    .guide-slide{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .slick-list{
+            padding: 8px;
+        .group-itmes{
+            text-align : center !important;
+            .guide-image{
+                display: block;
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+                object-fit: center;
+                text-align : center !important;
+                width: auto;
+                height: auto;
+                margin-bottom: 0.5rem;
+             
+               img{
+                   transition: 0.2s ease-out;
+                 
+                   width: 100px;
+                   height: 100px;
+                   border-radius: 100%;
+                   display: block;
+                   position: relative;
+                   border: 1px solid red;
+                   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                
+                   &:hover{
+                       transform: scale(1.3);
+                   }
+                text-align : center !important;
+               }
+            }
+            .guide-info{
+              h4{
+                  font-weight: bold;
+                  font-size: 0.9rem;
+                  letter-spacing: 1.5px;
+              }
+            }
+    
+        }  
+
+    }
+    }
+}
+
+.service{
+    text-align: center;
+    z-index: 1!important;
+    .service-title{
+        h1{
+            margin-bottom: 4rem;
+            font-weight: bold;
+            z-index: 2 !important;
+        }
+    }
+    .all-service{
+        display: flex;
+        justify-content: space-around;
+        .card-service{
+            text-align: center;
+            i{
+                font-size: 5rem;
+                margin-bottom: 2rem;
+            }
+            .content-service{
+                h4{
+                    font-size: 1rem;
+                  
+                }
+            }
+        }
+
+    }
+}
+
+.apropos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .content-apropos{
+        width: 50%;
+        h1{
+        font-weight: 600;
+       ;
+        }
+    }
+    
+    .image-apropos{
+        width: 50%;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            border: 8px solid red;
+            border-radius: 4px;
+            
+        }
+    }
+    
+}
+
+.localisation{
+    display: flex;
+    align-items: initial;
+    justify-content: space-between;
+    .titel-localisation{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+    }
+    .image-localisation{
+        width: 50%;
+        iframe{
+            width: 100%;
+            height: 80vh;
+        }
+    }
+}
+
+.guide-contact{
+    margin-top: 4rem;
+    display: flex;
+    .all-contact{
+        width: 50%;
+    }
+
+    .form-contact{
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 480px)
+{
+    #section-normal{
+        height: auto;
+    }
+
+    #section-image{
+        height: auto;
+    }
+  .apropos{
+      flex-direction: column;
+      text-align: center;
+      .content-apropos{
+          width: 100%;
+
+      }
+      .image-apropos{
+          width: 100%;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+      }
+  }
+
+  .service{
+    .all-service{
+        display: flex;
+        flex-direction: column !important;
+    }
+      
+  }
+
+  .localisation{
+    .titel-localisation{
+        display: none;
+    }
+    .image-localisation{
+        width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px)
+{
+    #section-normal{
+        height: auto;
+    }
+
+    #section-image{
+        height: auto;
+    }
+  .apropos{
+      flex-direction: column;
+      text-align: center;
+      .content-apropos{
+          width: 100%;
+
+      }
+      .image-apropos{
+          width: 100%;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+      }
+  }
+
+  .service{
+    .all-service{
+        display: flex;
+        flex-direction: column !important;
+    }
+      
+  }
+
+  .localisation{
+    .titel-localisation{
+        display: none;
+    }
+    .image-localisation{
+        width: 100%;
+    }
+  }
+}

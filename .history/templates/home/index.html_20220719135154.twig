@@ -1,0 +1,393 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Guide Touristique' %}
+
+{% block body %}
+<div class="banner-area">
+       <h1>Guide touristique de l'isalo</h1>
+</div>
+<div class="content">
+  <section>
+         <div class="liste-guide">
+            <h1>Liste de tous les guides inscrit</h1>
+            <div class="detaille-guide">
+                <h4>56 guides</h2> 
+                <a  href="/show.html">Voir tous les guides</a>
+            </div>
+            
+            <button class="slider-btn prevGuide">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-btn nextGuide">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+             <div class="group-guide">
+                <div class="card-guide">
+                    <div class="guide-photo">
+                        <img src="/images/maki2.jpg">
+                    </div>
+                    <div class="guide-content">
+                        <h4>Rasamabahita olivier</h4>
+                        <p>Francais</p>
+                        <p>rasamabahita@gmail.com</p>
+                        
+                    </div>
+                </div>
+                <div class="card-guide">
+                   <div class="guide-photo">
+                       <img src="/images/maki2.jpg" >
+                   </div>
+                   <div class="guide-content">
+                       <h4>Rasamabahita olivier</h4>
+                       <p>Francais</p>
+                       <p>rasamabahita@gmail.com</p>
+                      
+                   </div>
+               </div>
+               <div class="card-guide">
+                   <div class="guide-photo">
+                       <img src="/images/maki2.jpg" >
+                   </div>
+                   <div class="guide-content">
+                       <h4>Rasamabahita olivier</h4>
+                       <p>Francais</p>
+                       <p>rasamabahita@gmail.com</p>
+                      
+                   </div>
+               </div>
+               <div class="card-guide">
+                   <div class="guide-photo">
+                       <img src="/images/maki2.jpg" >
+                   </div>
+                   <div class="guide-content">
+                       <h4>Rasamabahita olivier</h4>
+                       <p>Francais</p>
+                       <p>rasamabahita@gmail.com</p>
+                       
+                   </div>
+               </div>
+             </div>
+            
+         </div>
+     </section>
+
+ 
+     <section>
+         <div class="apropos" id="apropos">
+             <div class="group-apropos">
+                <div class="left-apropos">
+                    <h1>A-propos de guide</h1>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
+                      officia natus sint placeat quae veritatis fuga blanditiis pariatur sunt quia repellendus consequatur! 
+                      Eligendi quas temporibus, quod eveniet fugit sunt nobis?
+                    </p>
+
+                    <a href="#">Voir les activité des guides</a>
+                 </div>
+    
+                 <div class="reight-apropos">
+                    <img src="/images/maki2.jpg" >
+                 </div>
+             </div>
+             
+         </div>
+     </section>
+
+     <section class="service">
+         <div class="container">
+            <div class="header-service">
+                <h3 class="title" data-title="Pour les clients">Service</h3>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Praesentium quae sit temporibus corrupti excepturi cum similique,
+                     ea natus minus itaque, possimus deleniti rem et ratione soluta doloribus, 
+                     impedit libero eius.
+                </p>
+            </div>
+             <div class="card-service">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="/images/securité.png" >
+                        <h3>Securité des clients</h3>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur,
+                            adipisicing elit. Earum quod sit.
+                        </p>
+                        <a class="btn" href="#">Voir plus</a>
+                    </div>
+                </div>
+                <div class="card-service">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="/images/satisfaction.jpg" >
+                            <h3>Satisfaire les clinets</h3>
+                            <p class="text">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Earum quod sit.
+                            </p>
+                            <a class="btn" href="#">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-service">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="/images/respecté.png" >
+                            <h3>Respecté les besoin du client</h3>
+                            <p class="text">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Earum quod sit.
+                            </p>
+                            <a class="btn" href="#">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+              
+             </div>
+         </div>
+     </section>
+
+
+     <section class="portfolio">
+         <div class="background-bg">
+         </div>
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="title" data-title="N'hesite pas de visité">Parc/Hotel</h3>
+
+                </div>
+                <div class="section-body">
+                    <div class="filter">
+                        <button class="filter-btn active" data-filter="*">Tous</button>
+                        <button class="filter-btn" data-filter=".parc">Parc</button>
+                        <button class="filter-btn" data-filter=".espece">Espece</button>
+                        <button class="filter-btn" data-filter=".plante">Plante</button>
+                        <button class="filter-btn" data-filter=".hotel">Hotels</button>
+                    </div>
+
+                    <div class="grid">
+                        <div class="grid-item espece">
+                            <div class="gallery-image">
+                                <img src="/images/maki.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Maki de madagascar</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item espece">
+                            <div class="gallery-image">
+                                <img src="/images/maki2.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Maki de madagascar</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item parc">
+                            <div class="gallery-image">
+                                <img src="/images/parc1.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Parc de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item parc">
+                            <div class="gallery-image">
+                                <img src="/images/parc2.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Parc de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item parc">
+                            <div class="gallery-image">
+                                <img src="/images/parc3.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Parc de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item hotel">
+                            <div class="gallery-image">
+                                <img src="/images/hotel1.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Hotel de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item hotel">
+                            <div class="gallery-image">
+                                <img src="/images/hotel2.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Hotel de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item hotel">
+                            <div class="gallery-image">
+                                <img src="/images/hotel3.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Hotel de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item plante">
+                            <div class="gallery-image">
+                                <img src="/images/plante1.jpg">
+                                <div class="image-overlay">
+                                    <div class="plus"></div>
+                                    <div class="img-description">
+                                        <h3>Plante de l'isalo</h3>
+                                        <h5>Voir tous</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plus-btn">
+                        <a href="#" class="btn">Plus</a>
+                    </div>
+                </div>
+            </div>
+        
+     </section>
+
+     <section class="contact">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1884788.2989686748!2d44.9250366!3d-22.6825866!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21df4ade504096d5%3A0x4612ab03e019c779!2sParc%20national%20de%20l&#39;Isalo!5e0!3m2!1sfr!2smg!4v1653850867037!5m2!1sfr!2smg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <div class="container">
+             <div class="contact-box">
+                 <div class="contact-info">
+                     <h3 class="title">Rester en contact</h3>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem aliquam quidem enim soluta nihil minima architecto</p>
+                    <div class="information-wrap">
+                        <div class="information">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker-alt"></i>
+                            </div>
+                            <p class="info-text">Isalo-Madagascar</p>
+                        </div>
+                        <div class="information">
+                            <div class="contact-icon">
+                                <i class="fa fa-paper-plane"></i>
+                            </div>
+                            <p class="info-text">rasmbahita@gmail.com</p>
+                        </div>
+                        <div class="information">
+                            <div class="contact-icon">
+                                <i class="fa fa-phone-alt"></i>
+                            </div>
+                            <p class="info-text">+261347402412</p>
+                        </div>
+                    </div>
+
+                 </div>
+                 <div class="contact-form">
+                     <h3 class="title">Contact nous</h3>
+                     <div class="row">
+                        <input type="text" class="contact-input" placeholder="Nom"></input>
+                        <input type="text" class="contact-input" placeholder="Prenom"></input>
+                     </div>
+                     <div class="row">
+                        <input type="text" class="contact-input" placeholder="Phone"></input>
+                        <input type="email" class="contact-input" placeholder="Email"></input>
+                     </div>
+                     <div class="row">
+                         <textarea name="message" class="contact-input textarea" placeholder="Message"></textarea>
+                     </div>
+                     <button class="btn">Envoyer</button>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <section class="hireguide">
+         <div class="container">
+             <h3 class="title">Que ce que un guide?</h3>
+             <p class="text">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quam nam, modi sapiente odio voluptatibus ratione vel quaerat culpa temporibus quisquam eum repellendus alias quia recusandae sunt ad cumque reiciendis?
+             </p>
+
+             <a  href="#" class="btn">Voir les activités des guides</a>
+         </div>
+     </section>
+
+      
+</div>
+
+<script>
+  $('.grid').isotope({
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows',
+    transitionDuration: "0.6s"
+  });
+
+   $(document).ready(function(){
+    $('.group-guide').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: $('.prevGuide'),
+      nextArrow: $('.nextGuide'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  
+  });
+</script>
+
+{% endblock %}
+

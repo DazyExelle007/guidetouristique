@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+            <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+            
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+           
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+             <!-- Load Flashy default JavaScript -->
+            <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+            <!-- Include Flashy default partial -->
+            <script src="//code.jquery.com/jquery.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <script src="https://kit.fontawesome.com/91b200e344.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="slick/slick.min.js"></script>
+           
+        {% endblock %}
+
+    </head>
+    <body>
+       {{ include('layouts/partials/_flash_messages.html.twig') }}
+       {{ include('layouts/partials/_nav.html.twig') }}
+       
+       <main role="main" class="content">
+        {% block body %}{% endblock %}
+       </main>
+       
+
+        {{ include('layouts/partials/_footer.html.twig') }}
+
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+
+        <script>
+        
+const filter_btns = document.querySelectorAll('.filter-btn');
+const footer_input = document.querySelector(".footer-input");
+const hamburger_menu = document.querySelector(".hamburger-menu");
+const navbar = document.querySelector("header nav");
+const links = document.querySelectorAll(".nav-links a");
+
+footer_input.addEventListener('focus', () => {
+ // alert('bonjours');
+  footer_input.classList.add('focus');
+});
+
+filter_btns.forEach(btn => btn.addEventListener('click', ()=>{
+  filter_btns.forEach(button => button.classList.remove('active'));
+  btn.classList.add('active');
+  let filterValue = btn.dataset.filter;
+  $(".grid").isotope(
+    {
+      filter:filterValue
+    }
+  )
+}))
+
+
+function closeMenu(){
+navbar.classList.remove("open");
+document.body.classList.remove("stop-scrolling")
+}
+
+hamburger_menu.addEventListener("click", () =>{
+ if(!navbar.classList.contains("open")){
+   navbar.classList.add("open");
+   document.body.classList.add("stop-scrolling")
+ }else{
+  closeMenu();
+ }
+});
+
+
+links.forEach((link)=>link.addEventListener("click", ()=>closeMenu()))
+
+
+$('.grid').isotope({
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows',
+    transitionDuration: "0.6s"
+  });
+
+
+
+
+  $(document).ready(function(){
+    $('.group-guide').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: $('.prevGuide'),
+      nextArrow: $('.nextGuide'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  
+  });
+        </script>
+    </body>
+</html>

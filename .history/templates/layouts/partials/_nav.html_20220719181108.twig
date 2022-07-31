@@ -1,0 +1,64 @@
+   <header>
+    <nav class="container">
+        <div class="nav-top">
+             <div class="logo">
+                {% if app.user %}
+                 <img src="{{app.user.imageGuide ? vich_uploader_asset(app.user) : asset('images/maki.jpg') }}" alt="" alt="mdo" width="40" height="40" class="rounded-circle">
+                 <h1>
+                     Guide<span class="litle-logo">.Isalo</span>
+                </h1>
+                {% else %}
+                   <img src="/images/maki.jpg">
+                    <h1>
+                        Guide<span class="litle-logo">.Isalo</span>
+                    </h1>
+                {% endif %}
+                        </div>
+                                <ul class="nav-links">
+                                {% if app.user %}
+                                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="login" href="{{ path('app_logout') }}">Déconnection</a></li>
+                        </ul>
+                        </div>
+                        
+                  {% else %}
+                        <li>
+                            <a href="{{path('app_home')}}">Acceuil</a>
+                        </li>
+                        <li>
+                        <a href="{{ path('app_publications') }}" >Publications</a>
+                        </li>
+                        <li>
+                            <a href="#apropos">A-propos</a>
+                        </li>
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_login') }}" type="button" class="login">Se connecté</a>
+                        </li>
+                    {% endif %}
+                </ul>   
+        
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                </div>
+        </div>
+    </nav>
+    </header>
+   
+  
+    
+
+  

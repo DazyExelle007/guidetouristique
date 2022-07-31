@@ -1,0 +1,211 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Guide Touristique' %}
+
+{% block body %}
+<section class=" bg-warning" id="section-center">
+  <div class="container">
+    <div class="title-guide">
+      <h1>Guide touristique de l'isalo</h1>
+      <p>Choisie votre et guide et voir plus d'information, le chois est pour vous !</p>
+      <hr>
+    </div>
+
+    <div class="guide-slik ">
+      <button class="slider-btn prevGuide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn nextGuide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="guide-slide">
+        {% for guide in guides %}
+        <div class="group-itmes  m-2">
+          <div class="guide-image">
+            <img src="{{guide.imageGuide ? vich_uploader_asset(guide) : asset('images/maki.jpg') }}" alt="{{ guide.firstName }}">
+           
+          </div>
+          
+          <div class="guide-info">
+            <h4>{{ guide.firstName }} {{ guide.lastName }}</h4>
+            <p>{{ guide.parcPlace }}</p>
+            <p>{{ guide.languageUse }}</p>
+
+          </div>
+          <a href="#">Voir plus</a>
+        </div>
+        {% endfor %}
+    </div>
+    </div> 
+  </div>
+</section>
+
+
+<section id="section-normal">
+  <div class="apropos container">
+      <div class="content-apropos">
+        <h1>Ce site web est fait pour le guide touristique de Madagascar</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Itaque unde molestiae odio magnam libero dolores cum? Veniam, 
+          ducimus itaque commodi consequuntur tempora quas non, voluptatibus, 
+          ipsum at quaerat ut quae?
+        </p>
+
+        <a   type="button"  href="{{ path('app_publications') }}" class="btn btn-warning" >Voire les Publications des guides</a>
+      </div>
+      <div class="image-apropos">
+        <img src="/images/maki.jpg" alt="image-apropos">
+      </div>
+
+    
+  </div>
+</section>
+
+
+<section class="service" id="section-image">
+  <div class=" container ">
+    <div class="service-title">
+      <h1>Notre Objectif</h1>
+    </div>
+
+    <div class="all-service">
+        <div class="card-service">
+          <i class="fa-brands fa-angellist"></i>
+          <hr>
+          <div class="content-service">
+            <h4>Votre sécurité est notre priorité</h4>
+          </div>
+        </div>
+
+        <div class="card-service">
+          <i class="fa-brands fa-angellist"></i>
+          <hr>
+          <div class="content-service">
+            <h4>Votre sécurité est notre priorité</h4>
+          </div>
+        </div>
+
+        <div class="card-service">
+          <i class="fa-brands fa-angellist"></i>
+          <hr>
+          <div class="content-service">
+            <h4>Votre sécurité est notre priorité</h4>
+          </div>
+        </div>
+
+        <div class="card-service">
+          <i class="fa-brands fa-angellist"></i>
+          <hr>
+          <div class="content-service">
+            <h4>Votre sécurité est notre priorité</h4>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
+
+<section id="section-localisation">
+  <div class="localisation">
+    <div class="titel-localisation">
+      <h1>Visité Madagascar et ses nature</h1>
+      <hr>
+      <a href="">Isalo</a>
+      
+    </div>
+    <div class="image-localisation">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7736976.400906135!2d42.37344244723157!3d-18.761552826136047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21d1a4e3ea238545%3A0x5244e3c1977b1388!2sMadagascar!5e0!3m2!1sfr!2smg!4v1652964077117!5m2!1sfr!2smg"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section  class=" bg-warning" id="section-center">
+  <div class="guide-contact container">
+    <div class="all-contact">
+      <h1>Contact</h1>
+      <div class="phone-contact">
+        <strong>Contact Rapide</strong>
+        <p>261347402412</p>
+      </div>
+      <div class="phone-contact">
+         <strong>E-mail</strong>
+        <p>dazyexelle@gmail.com</p>
+      </div>
+      <div class="phone-contact">
+        <strong>Adres</strong>
+        <p>Isalo-Ranohira-Madagascar</p>
+      </div>
+      
+    </div>
+    <div class="form-contact">
+      <h1>Envoyer Message</h1>
+      <form>
+        <div class="mb-3">
+          <label>Nom</label>
+          <input class="form-control"></input>
+        </div>
+        <div class="mb-3">
+          <label>Email</label>
+          <input class="form-control"></input>
+        </div>
+        <div class="mb-3">
+          <label>Objet</label>
+          <input class="form-control"></input>
+        </div>
+        <div class="mb-3">
+          <label>Message</label>
+          <textarea class="form-control"></textarea>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit"  class="btn btn-danger">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    $(document).ready(function(){
+    $('.guide-slide').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      autoplay: true,
+      prevArrow: ".prevGuide",
+      nextArrow: ".nextGuide",
+      responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+    });
+  });
+</script>
+
+{% endblock %}
+

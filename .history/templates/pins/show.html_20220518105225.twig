@@ -1,0 +1,35 @@
+
+{% extends 'layouts/base.html.twig' %}
+
+{% block title pin.title %}
+
+{% block body %}
+       
+      <div class="container">
+        <div class="row featurette mt-5">
+            <div class="col-md-7 mb-4">
+            <h3 class="featurette-heading">{{ pin.title }}</h3>
+            <small>Publier <time datetime="{{ pin.createdAt|date('Y-m-d H:i:s') }}"> {{ pin.createdAt|ago }} </time> par {{ pin.user.fullname }}</small>
+            <p class=" text-break">{{ pin.description }}</p>
+            <div class="btn-group" role="group" aria-label="button action">
+                {% if app.user == pin.user  %} 
+                <a href="{{ path('app_publications') }}"  type="button" class="btn btn-info m-1">Retour</a>
+                <a href="{{ path('app_pins_edit', {id: pin.id} ) }}" type="button" class="btn btn-warning m-1">Moddifier</a>
+                <a type="button" class="btn btn-danger m-1" onclick="event.preventDefault(); confirm('etes vous sur de vouloir supprimer cette publication ?') && document.getElementById('js-publication-delete').submit();">Supprimer</a>
+                {% endif %}
+            </div>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ (pin.imageName ? vich_uploader_asset(pin) : asset('/images/maki.jpg')) | imagine_filter('squared_thumbnail_medium')  }}" alt="{{ pin.title }}" style="width: 100%;" class="rounded">
+            </div>
+        </div>
+
+
+        <form id="js-publication-delete-form" action="{{ path('app_pins_delete', {id: pin.id }) }}" method="POST" style="display:none">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token('delete_publication_' ~ pin.id) }}">
+        </form>
+      </div>
+      
+{% endblock %}
+

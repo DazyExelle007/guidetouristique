@@ -1,0 +1,47 @@
+
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Publications' %}
+
+{% block body %}
+
+<div class="p-2 p-md-4 mb-5 mt-5 text-white rounded bg-dark container">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">Publication et activité </h1>
+          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+          <p class="lead mb-0"><a href="#all-pulucations" class="text-white fw-bold">Voir plus...</a></p>
+          <p class="lead my-3">Il y a {{ pluralize(pins|length, 'Pin', 'Pins')}} </p>
+        </div>
+</div>
+    
+{% if pins|length > 0 %}
+
+{% for row in pins|batch(6) %}
+<div class="">
+  <div class="row mb-2 " id="all-pulucations">
+ 
+    {%for pin in row %}
+    <div class="col-md-6 publications">
+      <div class="group-pub  row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="col p-3 d-flex flex-column position-static">
+          <small class="d-inline-block mb-2 text-primary">Publier par {{ pin.user.fullName }}</small>
+          <h4 class="mb-0">{{ pin.title }}</h4>
+          <div class="mb-1 text-muted">{{ pin.createdAt|ago(locale='fr') }}</div>
+          <p class="card-text mb-auto text-break">{{ pin.description| u.truncate(10, '.....', true) }}</p>
+          <a href="{{ path('app_pins_show', {id: pin.id}) }}" class="stretched-link">Voir plus</a>
+        </div>
+        <div class="img-pub col-auto d-none d-lg-block">
+          <img src="{{ (pin.imageName ?  vich_uploader_asset(pin) : asset('images/maki.jpg'))  | imagine_filter('squared_thumbnail_medium') }}" alt="{{ pin.title }}"  class="rounded w-100">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endfor%}
+{% else %}
+<p class="h4 text-center mt-5">Pas de publications disponible.<a href="{{ path('app_publications_create') }}">Soyez le prémier à crée un publication</a></p>
+{% endif %}
+</div>
+
+{% endblock %}
+

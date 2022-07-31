@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@300;400&family=Roboto:wght@300&display=swap');
+
+@import 'shared/variables';
+@import 'shared/home_style';
+
+@import "~bootstrap/scss/bootstrap";
+
+$base-color: #bf1300;
+$button-color: #01480e;
+$letter-white: #fff;
+$letter-black:#000;
+
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    color: #000;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 92rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+
+.title{
+    display: inline-block;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 2.8rem;
+    position: relative;
+    margin-bottom: 1rem;
+    z-index: 1;
+    color: #000;
+    &::before{
+        content: attr(data-title);
+        display: block;
+        margin-bottom: 0.4rem;
+        color: $letter-white;
+        font-size: 1.15rem;
+        font-weight: 500px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        z-index: 1;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 4px;
+        border-radius: 3px;
+        background-color: $button-color;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+}
+
+.btn{
+    background-color:$base-color;
+    color: $letter-white;
+    appearance: button;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.85rem 2rem;
+    margin-left: 0rem;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    &:hover{
+        background-color: #01480e;
+    }
+}
+
+
+   .alert{
+    padding: 10px;
+    color:white;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    &.alert-success{
+        background-color: green;
+    }
+    &.alert-error{
+        background-color: red;
+    }
+    &.alert-info{
+        background-color: blue;
+    }
+}
+
+.vich-image{
+    img {
+        @extend .mt-2, .rounded, .shadow, .img-thumbnail, .col-md-6
+    }
+    .form-check{
+        @extend .mt-3;
+      }
+}
+
+.publications{
+   
+    .group-pub{
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s ease-out;
+        &:hover{
+            transform:scale(1.075);     
+            background-color:yellow;  
+         }
+        .img-pub{
+            img{
+                height: 250px;
+                width: 220px;
+                object-fit: cover;
+              
+            }
+        }
+    }
+   
+   
+}
+
+
+
+
+
+/** style header */
+
+header{
+    overflow: hidden;
+    background-color: #f2f2f2;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    
+    .container{
+        max-width: 92rem;
+        padding: 0 4rem;
+        margin: 0 auto;
+        .nav-top{
+           display: flex;
+           justify-content: space-between;
+           height: 4rem;
+           align-items: center;
+          
+            .logo{
+                display: flex;
+                align-items: center;
+                img{
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    margin-right: 1rem;
+                }
+                h1{
+                    font-size: 2rem;
+                    .litle-logo{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .nav-links{
+                display: flex;
+                li{
+                   a{
+                       display: inline-block;
+                       padding: 0.6rem 1.2rem;
+                       color: $letter-black;
+                       font-size: 0.9rem;
+                       text-transform: uppercase;
+                       font-weight: 500;
+                       line-height: 1;
+                       transition: 0.2s;
+                   }
+
+                   .login{
+                    background-color:$base-color;
+                    color: $letter-white;
+                    appearance: button;
+                    border-radius: 6px;
+                    border-width: 0;
+                    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+                    box-sizing: border-box;
+                    color: #fff;
+                    font-size: 0.9rem;
+                    padding: 0.85rem 2rem;
+                    margin-left: 1rem;
+                    text-align: center;
+                    text-transform: none;
+                    transform: translateZ(0);
+                    transition: all .2s,box-shadow .08s ease-in;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    &:hover{
+                        background-color: $button-color;
+                    }
+
+
+                }
+                }
+               
+            }
+        }
+    }
+}
+
+.banner-area{
+    width: 100%;
+    height: 40vh;
+    position: fixed;
+    top: 4rem;
+  //  background-image: url(/images/maki.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    &::before{
+        content: "";
+        position: absolute;
+        opacity: 0.8;
+        width: 100%;
+        left: 0;
+        z-index: 0;
+        height: 40vh;
+        background-color: #000;
+    }
+    h1{
+        padding-top: 8%;
+        font-size: 2rem;
+      //  font-family: poppins;
+        position: relative;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 1 !important;
+    }
+}
+
+
+
+
+.content{
+    position: relative;
+    top: 30vh;
+    height: 54vh;
+    background-color: #fff; 
+}

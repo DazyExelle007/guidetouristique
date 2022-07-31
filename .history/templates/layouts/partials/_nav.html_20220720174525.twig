@@ -1,0 +1,44 @@
+
+<header class="p-3 bg-dark text-white fixed-top my-headr">
+    <div class="container ">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="logo">
+          <h1>Guide<span>.isalo</span></h1>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Acceuil</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Guide</a></li>
+          <li><a href="#apropos" class="nav-link px-2 text-white">A-propos</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Photo</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
+        </ul>
+
+        
+        <div class="dropdown text-end">
+            {% if app.user %}
+           <div >
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" class="image-guide-profil" >
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="{{path('app_publications_create') }}">Nouveau Publication...</a></li>
+                <li><a class="dropdown-item" href="{{ path('app_account_edit') }}">Parametre</a></li>
+                <li><a class="dropdown-item" href="{{ path('app_account') }}">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="{{ path('app_logout') }}">Déconnection</a></li>
+            </ul>
+            </div>
+
+            {% else %}
+
+                <a href="{{ path('app_register') }}" type="button" class="btn btn-outline-light me-2">S'inscrire</a>
+                <a href="{{ path('app_login') }}" type="button" class="btn btn-warning">Se connecté</a>
+        
+            {% endif %}
+          </div>
+      </div>
+    </div>
+  </header>
+
+  

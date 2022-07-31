@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@300;400&family=Roboto:wght@300&display=swap');
+
+@import 'shared/variables';
+@import 'shared/home_style';
+
+@import "~bootstrap/scss/bootstrap";
+
+
+   .alert{
+    padding: 10px;
+    color:white;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    &.alert-success{
+        background-color: green;
+    }
+    &.alert-error{
+        background-color: red;
+    }
+    &.alert-info{
+        background-color: blue;
+    }
+}
+
+.vich-image{
+    img {
+        @extend .mt-2, .rounded, .shadow, .img-thumbnail, .col-md-6
+    }
+    .form-check{
+        @extend .mt-3;
+      }
+}
+
+.publications{
+   
+    .group-pub{
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s ease-out;
+        &:hover{
+            transform:scale(1.075);     
+            background-color:yellow;  
+         }
+        .img-pub{
+            img{
+                height: 250px;
+                width: 220px;
+                object-fit: cover;
+              
+            }
+        }
+    }
+   
+   
+}
+
+
+$base-color: #bf1300;
+$button-color: #01480e;
+$letter-white: #fff;
+$letter-black:#000;
+/** Style géneratl */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+

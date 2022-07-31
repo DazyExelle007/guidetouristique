@@ -1,0 +1,38 @@
+ <header class="p-3 bg-success text-white" id="sticky">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2" width="40" height="32" role="img"  aria-label="Bootstrap" src="{{ asset('images/maki.jpg') }}"></img>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li> <a href="{{ path('app_home') }}" class="nav-link px-2 text-white">Guide</a></li>
+          <li><a href="{{ path('app_publications') }}" class="nav-link px-2 text-white">Publications</a></li>
+        </ul>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+        {% if app.user %}
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{app.user.imageGuide ? vich_uploader_asset(app.user) : asset('images/maki.jpg') }}" alt="" alt="mdo" width="40" height="40" class="rounded-circle">
+          </a>
+          
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="{{path('app_publications_create') }}">Nouveau Publication...</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_account_edit') }}">Parametre</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_account') }}">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item " href="{{ path('app_logout') }}">Déconnection</a></li>
+          </ul>
+          {% else %}
+          <a href="{{ path('app_login') }}" type="button" class="btn btn-sm btn-outline-light me-2">Se connecté</a>
+          <a href="{{ path('app_register') }}" type="button" class="btn btn-sm btn-warning">S'inscrire</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  

@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html.twig' %}
+
+
+{% block title 'Modifier le compte utilisateur' %}
+
+{% block body%}
+<div class="row dazy">
+    <div class="col-md-6 mx-auto ">
+        <h1 class="my-4 text-center">Update Profile</h1>
+      {{ form_start(form) }}
+    
+      <div class="row">
+          <div class="col-md-6">
+            {{ form_row(form.firstName) }}
+          </div>
+          <div class="col-md-6">
+            {{ form_row(form.lastName) }}
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {{ form_row(form.phoneNumber) }}
+        </div>
+        <div class="col-md-6">
+          {{ form_row(form.languageUse) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{ form_row(form.parcPlace) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+      {{  form_row(form.imageFile) }}
+      </div>
+    </div>
+      {{ form_rest(form) }}
+      <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit" >Apply changes</button>
+      </div>
+      {{ form_end(form) }}
+       
+    </div>
+</div>
+{% endblock%}

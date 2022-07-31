@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@300;400&family=Roboto:wght@300&display=swap');
+
+@import 'shared/variables';
+@import 'shared/home_style';
+
+@import "~bootstrap/scss/bootstrap";
+
+/** Style génerale */
+
+$base-color: #bf1300;
+$button-color: #01480e;
+$letter-white: #fff;
+$letter-black:#000;
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+    font-family: "Poppins", sans-serif;
+}
+
+.stop-scrolling{
+    height: 100%;
+    overflow: hidden;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    color: #000;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 92rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+
+.btn{
+    background-color:$base-color;
+    color: $letter-white;
+    appearance: button;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.60rem 2rem;
+    margin-left: 0rem;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    &:hover{
+        background-color: #01480e;
+        color: $letter-white;
+    }
+}
+
+/** Style génerale */
+
+/* style alert message*/
+.alert{
+    padding: 10px;
+    color:white;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    &.alert-success{
+        background-color: green;
+    }
+    &.alert-error{
+        background-color: red;
+    }
+    &.alert-info{
+        background-color: blue;
+    }
+}
+/* fin style alert message*/
+
+/** style image vich */
+.vich-image{
+    img {
+        @extend .mt-2, .rounded, .shadow, .img-thumbnail, .col-md-6
+    }
+    .form-check{
+        @extend .mt-3;
+      }
+}
+/** fin style image vich */
+
+
+/** style pulications guide */
+.publications{
+   
+    .group-pub{
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s ease-out;
+        &:hover{
+            transform:scale(1.075);     
+            background-color:yellow;  
+         }
+        .img-pub{
+            img{
+                height: 250px;
+                width: 220px;
+                object-fit: cover;
+              
+            }
+        }
+    }
+   
+   
+}
+
+/** fin style pulications guide */
+
+
+
+
+/**my content*/
+
+
+.content{
+    position: relative;
+    top: 1rem;
+    height: 54vh;
+    background-color:$letter-white;
+}
+
+
+/** fin my content */

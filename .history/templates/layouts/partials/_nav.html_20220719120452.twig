@@ -1,0 +1,54 @@
+   <header>
+    <nav class="container">
+        <div class="nav-top">
+             <div class="logo">
+                   <img src="/images/maki.jpg">
+                    <h1>
+                        Guide<span class="litle-logo">.Isalo</span>
+                    </h1>
+             </div>
+           
+
+               
+                <ul class="nav-links">
+                  {% if app.user %}
+                        <li><a class="dropdown-item" href="{{path('app_publications_create') }}">Nouveau Publication...</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_account_edit') }}">Parametre</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_account') }}">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item " href="{{ path('app_logout') }}">Déconnection</a></li>
+                  {%else%}
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="#apropos">A-propos</a>
+                        </li>
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_login') }}" type="button" class="login">Se connecté</a>
+                        </li>
+                    {% endif %}
+                </ul>   
+        
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                </div>
+        </div>
+    </nav>
+    </header>
+    {% if app.user.has("app_publications_create") %}
+    <div class="banner-area">
+       <h1>Guide touristique de l'isalo</h1>
+    </div>
+    {% else %}
+
+    {% endif %}
+    
+
+  
